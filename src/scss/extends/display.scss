@@ -1,0 +1,46 @@
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%effect-text-shadow {
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 5px;
+  text-shadow: 3px 3px 20px #ff99cc, -2px 1px 30px #ff99cc;
+}
+
+%buttons {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 2;
+  display: flex;
+  gap: 15px;
+
+  .btn {
+    padding: 0;
+    border: none;
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 40px;
+    gap: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  [class*="hvr-"]:not(.hvr-icon) {
+    transition-duration: 0.3s;
+    background: $yellow;
+
+    &::before {
+      background: $pink;
+    }
+  }
+}

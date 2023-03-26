@@ -1,0 +1,25 @@
+@import './variables';
+@import './menubar';
+@import './extends/display';
+@import './custom';
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @extend %flex-center;
+  text-align: center;
+  background: #020202;
+  color: #2c3e50;
+
+  #app {
+    width: 100vw;
+    height: 100vh;
+    // overflow: hidden;
+  }
+}

@@ -1,0 +1,150 @@
+@import '../variables.scss';
+
+.home {
+  display: flex;
+  position: relative;
+
+  .buttons {
+    position: fixed;
+    bottom: 5vh;
+    right: 5vw;
+    z-index: 2;
+  }
+
+  &__welcome, &__end {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__welcome {
+    background: $background--base;
+  }
+  &__detail {
+    width: 100%;
+  }
+  &__end {
+    background: $background--end;
+    overflow: hidden;
+  }
+}
+
+// responsive
+@media screen and (max-width: 767px) {
+  .home {
+    &__welcome {
+      :deep {
+        .text-shadows {
+          z-index: 2;
+          top: 85%;
+          left: 25%;
+        }
+        .box-gift {
+          z-index: 1;
+          transform: translate(-65%, -25%);
+        }
+        .cake {
+          z-index: 0;
+          left: 50%;
+        }
+      }
+    }
+    &__detail {
+      :deep {
+        .details {
+          &__data {
+            flex-direction: column;
+
+            > div {
+              &:nth-child(1) {
+                order: 2;
+              }
+              &:nth-child(2) {
+                order: 1;
+              }
+            }
+
+            .yearly-timeline {
+              height: 100%;
+              position: relative;
+              top: -8%;
+
+              .timeline {
+                width: 90%;
+
+                &-content {
+                  padding: 20px;
+                }
+                &:nth-child(even) {
+                  padding: 30px 0 0 30px;
+                }
+              }
+            }
+            .moments {
+              &__text-shadow {
+                font-size: 3em;
+              }
+              .text-shadows {
+                top: 5%;
+              }
+              .coverflow {
+                width: 100%;
+              }
+            }
+          }
+          &__buttons {
+            right: 50%;
+            transform: translateX(55%);
+
+            .btn {
+              width: 100px;
+              height: 35px;
+            }
+          }
+        }
+      }
+    }
+    &__end {
+      :deep {
+        .end {
+          flex-direction: column;
+          overflow: hidden scroll;
+
+          &__element {
+            &:nth-child(1) {
+              transform: translateX(-50%);
+              padding: 120px 20px;
+            }
+
+            %width-height-card {
+              width: 250px;
+              height: 350px;
+            }
+            .birthday-card {
+              @extend %width-height-card;
+              margin-bottom: 15vh;
+
+              .card-front, .card-inside {
+                @extend %width-height-card;
+              }
+              .happy, .bday, .toyou {
+                font-size: 20px;
+              }
+              .card-inside {
+                .wishes {
+                  p {
+                    font-size: 17px;
+                  }
+                }
+              }
+            }
+          }
+          &__buttons {
+            bottom: 2vh;
+          }
+        }
+      }
+    }
+  }
+}
