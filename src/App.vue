@@ -5,7 +5,7 @@
   </nav>
   <router-view/>
   <audio id="myAudio" style="margin-top: 10px;" controls ref="audio" autoplay>
-      <source  src="../../special/src/assets/audio/2AM-JustaTee-BigDaddy.mp3" type="audio/ogg"> 
+      <source  src="@/assets/audio/2AM-JustaTee-BigDaddy.mp3" type="audio/ogg"> 
   </audio>
 </template>
 <script>
